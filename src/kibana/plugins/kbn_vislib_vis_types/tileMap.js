@@ -23,7 +23,7 @@ define(function (require) {
           heatBlur: 15,
           heatNormalizeData: true,
         },
-        mapTypes: ['Scaled Circle Markers', 'Shaded Circle Markers', 'Shaded Geohash Grid', 'Heatmap'],
+        mapTypes: ['Scaled Circle Markers', 'Shaded Circle Markers', 'Shaded Geohash Grid'],
         canDesaturate: !!supports.cssFilters,
         editor: require('text!plugins/kbn_vislib_vis_types/editors/tile_map.html')
       },

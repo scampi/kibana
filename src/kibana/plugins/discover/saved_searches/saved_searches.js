@@ -15,6 +15,21 @@ define(function (require) {
     title: 'searches'
   });
 
+  require('plugins/settings/saved_object_registry').register({
+    service: 'savedSearches',
+    title: 'searches1'
+  });
+
+  require('plugins/settings/saved_object_registry').register({
+    service: 'savedSearches',
+    title: 'searches2'
+  });
+
+  require('plugins/settings/saved_object_registry').register({
+    service: 'savedSearches',
+    title: 'searches3'
+  });
+
   module.service('savedSearches', function (Promise, config, configFile, es, createNotifier, SavedSearch, kbnUrl) {
 
 
