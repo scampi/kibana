@@ -16,6 +16,7 @@ describe('IndexPattern#flattenHit()', function () {
     let indexPattern = {
       fields: {
         byName: {
+          'tags.text': { type: 'string' },
           'message': { type: 'string' },
           'geo.coordinates': { type: 'geo_point' },
           'geo.dest': { type: 'string' },
@@ -88,8 +89,8 @@ describe('IndexPattern#flattenHit()', function () {
     expect(flat).to.have.property('user.id', hit._source.user.id);
   });
 
-  it('preserves objects in arrays', function () {
-    expect(flat).to.have.property('tags', hit._source.tags);
+  it('expand objects in arrays', function () {
+    expect(flat['tags.text']).to.be.eql([ 'foo', 'bar' ]);
   });
 
   it('does not enter into nested fields', function () {
